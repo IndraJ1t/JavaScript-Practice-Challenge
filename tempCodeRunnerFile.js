@@ -1,1 +1,1 @@
-console.log("The character is number!");
+No
