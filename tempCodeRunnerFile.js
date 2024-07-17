@@ -1,1 +1,4 @@
-`${year} is not a leap year`
+function greet(name, age = 16) {
+//     console.log(`hello ${name}!`)
+// }
+// greet("Indrajit")
