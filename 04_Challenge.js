@@ -26,9 +26,20 @@
 
 //Patern print
 
-for (i = 1; i <= 5; i++) {
-    for (let j = 1; j <= i; j++) {
-        console.log("* ");
+// for (i = 1; i <= 5; i++) {
+//     for (let j = 1; j <= i; j++) {
+//         console.log("* ");
+//     }
+//     console.log("\n");
+// }
+
+
+//continue statement
+
+
+for (i = 0; i < 10; i++) {
+    if (i === 5) {
+        continue
     }
-    console.log("\n");
+    console.log(i);
 }
