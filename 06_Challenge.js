@@ -54,3 +54,5 @@ console.log(myarr2);
 let row = [2];
 let col = [1];
 console.log(myarr2[row][col]);
+
+console.log(myarr);
