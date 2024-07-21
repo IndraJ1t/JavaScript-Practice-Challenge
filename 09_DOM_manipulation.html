@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="" class="classOfImg" id="imagee" alt="error">
+    <div class="some" id="thing">
+        <p>Something In The Way </p>
+        <ul>
+            <li>
+                this is first list
+            </li>
+        </ul>
+    </div>
+    <button id="butt" style="border: solid black 2px;">
+        before click
+    </button>
+</body>
+
+
+<script>
+    // const idGetter = document.getElementById("thing")
+    // idGetter.innerHTML = ("Something In The Way She Moves")
+
+    // let classGetter = document.querySelector(".some")
+    // classGetter.style.backgroundColor = "red"
+
+    // let newDiv = document.createElement("div")
+    // newDiv.className = "newDiv"
+    // newDiv.textContent = " This is new div "
+    // document.body.appendChild(newDiv)
+
+    let ulItem = document.querySelector("ul")
+    const newli = document.createElement("li")
+    newli.textContent = "This is second li"
+    ulItem.appendChild(newli)
+
+    // const forRemove = document.getElementsByClassName("newDiv")
+    // document.body.removeChild(newDiv)
+
+    const lastchileRemove = document.querySelector("ul")
+    const lastChhild = lastchileRemove.lastChild
+    if (lastChhild) {
+        console.log(lastChhild.nodeType); // Check the node type (e.g., 1 for element, 3 for text)
+        console.log(lastChhild.nodeName); // Get the node name (e.g., "DIV", "#text")
+
+        if (lastChhild.nodeType === 1) { // Check if it's an element node
+            console.log(lastChhild.textContent); // Access text content for elements
+        }
+        lastchileRemove.removeChild(lastChhild)
+        console.log(lastChhild);
+    }
+    const image = document.querySelector("#imagee")
+    image.setAttribute("alt", "okay")
+    image.removeAttribute("class")
+
+    const forbutton = document.getElementById("butt")
+    forbutton.addEventListener("click", () => {
+        forbutton.textContent = "Button clicked"
+    })
+    forbutton.addEventListener("mouseover", () => {
+        forbutton.style.border = "solid red 2px"
+    })
+    forbutton.addEventListener("mouseout", () => {
+        forbutton.style.border = "solid black 2px"
+    })
+
+
+
+</script>
+
+</html>

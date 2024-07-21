@@ -40,6 +40,8 @@
 
 
 //Enhanced Objects literals
+
+
 // function objFunc(name, age) {
 //     this.name = name;
 //     this.age = age;
@@ -47,6 +49,8 @@
 // let person1 = new objFunc("Rohan", 21)
 // console.log(person1);
 // console.log(person1.age);// accessing properties
+
+//Computed Property
 
 let name = "book1";
 let title = "GoT";
