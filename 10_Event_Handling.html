@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="button">click here</button>
+        <p id="paragraph">Lorem ipsum dolor sit amet...</p>
+    </div>
+
+    <p>Type input to log it to console</p>
+    <input id="textInput" type="text">
+    <br>
+
+    <form id="submitForm">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <label for="cars">Choose a car:</label>
+    <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option id="audic" value="audi">Audi</option>
+    </select>
+    <div id="carInfo"></div>
+
+    <ul id="ulItems">Ul
+        <li>Hello: </li>
+        <li>Good:</li>
+        <li>Morning.</li>
+    </ul>
+
+    <script>
+        const button = document.getElementById("button");  // Corrected variable name
+        const paragraph = document.getElementById("paragraph");
+
+        button.addEventListener("click", () => {
+            paragraph.textContent = "changed text ";
+        });
+
+        const textInput = document.getElementById("textInput");
+        textInput.addEventListener("keydown", (e) => {
+            console.log(e.key);
+        });
+
+        const form = document.getElementById("submitForm");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const firstName = document.getElementById("fname");
+            const lastName = document.getElementById("lname");
+            const firstNameValue = firstName.value;
+            const lastNameValue = lastName.value;
+
+            console.log(firstNameValue, lastNameValue);
+        });
+
+        const carSelect = document.getElementById("cars");
+        const carInfoDiv = document.getElementById("carInfo"); // Corrected ID usage
+
+        carSelect.addEventListener("change", () => { // Use "change" event for dropdown
+            const selectedCar = carSelect.value;
+
+            if (selectedCar === "audi") {
+                const audiInfo = document.createElement("p");
+                const audiInfoText = document.createTextNode("Here's info about Audi: Audi AG is a German automotive manufacturer...");
+                audiInfo.appendChild(audiInfoText);
+                carInfoDiv.innerHTML = "";  // Clear previous content before adding new info
+                carInfoDiv.appendChild(audiInfo);
+            } else {
+                carInfoDiv.innerHTML = "";  // Clear previous content if not Audi
+            }
+        });
+        // Event Delegation (can be used for dynamic li generation too)
+        // const gettingUl = document.getElementById("ulItems");
+
+        //printing contents of li
+        // const liItems = document.querySelectorAll("li")
+        // gettingUl.addEventListener("click", () => {
+        //     for (const i of liItems) {
+        //         console.log(i.textContent);
+        //     }
+        // })
+
+        //dynamically adding li items 
+        const gettingUl = document.getElementById("ulItems");
+        let counter = 1;
+        gettingUl.addEventListener("click", () => {
+            const childEle = document.createElement("li")
+            childEle.textContent = `This is list no. ${counter}`
+            counter += 1;
+            gettingUl.appendChild(childEle)
+
+        })
+
+
+    </script>
+</body>
+
+</html>
