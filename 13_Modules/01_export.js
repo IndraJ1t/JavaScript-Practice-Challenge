@@ -14,3 +14,4 @@ const myObj = {
 // module.exports = addTwoNum;
 module.exports = myObj;
 
+/* For some unknown reasons default and named exports are not working and throwing "Cannot use import statement outside a module error" */
