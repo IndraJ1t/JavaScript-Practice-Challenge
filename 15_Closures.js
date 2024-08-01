@@ -18,6 +18,7 @@ const generation = uniqueID();
 console.log(generation());
 console.log(generation());
 console.log(generation());
+console.log(generation());
 
 
 function creation() {
