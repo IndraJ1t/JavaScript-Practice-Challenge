@@ -1,3 +1,4 @@
-function greet() {
-    return `Hello ${this.name}, your age is ${age}.`
-};
+reg = /javascript/g
+const text = "javascript is a fun language. javascript"
+const match = text.match(reg);
+console.lo
