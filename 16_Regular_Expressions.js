@@ -65,7 +65,7 @@ function HTMLElements(str) {
         if (fullMatch.startsWith("</")) {
             if (stack.length === 0 || stack[stack.length - 1] !== tag) {
                 // Return the first problematic opening tag
-                const errMessage = (stack.length === 0 ? openTags[0] : stack[stack.length - 1]);
+                const errMessage = openTags[0];
                 console.log(`Error on ${errMessage} tag`);
             }
             stack.pop();
